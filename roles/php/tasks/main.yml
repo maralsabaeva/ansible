@@ -1,0 +1,19 @@
+- name: Install PHP Remi Repository
+  when: ansible_facts['package_mgr'] == "dnf"
+  dnf:
+    name: "{{ php_repo_url}}"
+    update_cache: yes
+    state: present
+
+- name: Enable PHP Remi Repository
+  when: ansible_facts['package_mgr'] == "dnf"
+  command: dnf module reset php -y
+  command: dnf module enable php:remi-8.0 -y
+
+- name: Install PHP Extenstions
+  when: ansible_facts['package_mgr'] == "dnf"
+  dnf:
+    name: {{ item }}
+    update_cache: yes
+    state: present
+    loop: "{{ php_modules }}"   

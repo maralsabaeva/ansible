@@ -1,0 +1,45 @@
+# PHP settings
+php_modules:
+  - php
+  - php-mysqlnd
+  - php-fpm
+  - php-opcache
+  - php-curl
+  - php-json
+  - php-gd
+  - php-xml
+  - php-mbstring
+  - php-zip
+
+# PHP repository
+php_repo_url: https://rpms.remirepo.net/enterprise/remi-release-8.rpm  
+
+# MariaDB env settings
+mysql_root_password:
+mysql_wp_db:
+mysql_wp_user:
+mysql_wp_password:
+mysql_host: 
+
+# MariaDB packages
+mariadb_modules:
+  - mariadb-server
+  - php-mysqlnd
+  - python3-PyMySQL
+
+# MariaDB service
+mariadb_service_name: mariadb   
+
+# Apache env settings
+http_host:
+http_conf:
+http_port: "80"
+
+# Apache package name
+apache_package_name: httpd
+
+# Apache service name
+apache_service_name: httpd
+
+# Wordpress source.Latest as of 12.08.2022
+wordpress_src: https://wordpress.org/wordpress-6.1.1.tar.gz

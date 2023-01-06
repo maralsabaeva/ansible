@@ -1,0 +1,5 @@
+- name: Restart Apache
+  when: ansible_facts['service_mgr'] == "systemd"
+  systemd: 
+    name: "{{ apache_service_name }}"
+    state: restarted
